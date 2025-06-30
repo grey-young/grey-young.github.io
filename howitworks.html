@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Jessy's Task Manager | Modern Task Management</title>
+    <title>How Jessy's Task Manager Works | Modern Task Management</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+      rel="stylesheet"
     />
     <style>
       :root {
@@ -28,7 +32,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Poppins", sans-serif;
       }
 
       body {
@@ -36,6 +40,17 @@
         color: var(--light);
         line-height: 1.6;
         overflow-x: hidden;
+        background: radial-gradient(
+            circle at top right,
+            rgba(67, 97, 238, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at bottom left,
+            rgba(76, 201, 240, 0.1) 0%,
+            transparent 40%
+          ),
+          var(--darker);
       }
 
       .container {
@@ -130,69 +145,35 @@
       }
 
       /* Hero Section */
-      .about-hero {
+      .how-it-works-hero {
         padding: 180px 0 100px;
-        position: relative;
-        overflow: hidden;
         text-align: center;
+        position: relative;
       }
 
-      .about-hero::before {
-        content: "";
-        position: absolute;
-        top: -200px;
-        left: -200px;
-        width: 800px;
-        height: 800px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(67, 97, 238, 0.15) 0%,
-          rgba(30, 41, 59, 0) 70%
-        );
-        z-index: -1;
-      }
-
-      .about-hero::after {
-        content: "";
-        position: absolute;
-        bottom: -300px;
-        right: -200px;
-        width: 600px;
-        height: 600px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(76, 201, 240, 0.15) 0%,
-          rgba(30, 41, 59, 0) 70%
-        );
-        z-index: -1;
-      }
-
-      .about-hero h1 {
+      .how-it-works-hero h1 {
         font-size: 4rem;
         font-weight: 800;
         margin-bottom: 20px;
         line-height: 1.2;
       }
 
-      .about-hero h1 span {
+      .how-it-works-hero h1 span {
         background: var(--gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
-      .about-hero p {
+      .how-it-works-hero p {
         font-size: 1.3rem;
         color: var(--gray);
         margin: 0 auto 30px;
-        max-width: 800px;
+        max-width: 700px;
       }
 
-      /* Mission Section */
-      .mission {
+      /* Steps Section */
+      .steps {
         padding: 100px 0;
-        background: var(--dark);
         position: relative;
       }
 
@@ -218,28 +199,18 @@
         margin: 0 auto;
       }
 
-      .mission-content {
+      .step-container {
         display: flex;
         align-items: center;
         gap: 60px;
+        margin-bottom: 100px;
       }
 
-      .mission-text {
-        flex: 1;
+      .step-container:nth-child(even) {
+        flex-direction: row-reverse;
       }
 
-      .mission-text h3 {
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-      }
-
-      .mission-text p {
-        margin-bottom: 20px;
-        color: var(--gray);
-        line-height: 1.8;
-      }
-
-      .mission-image {
+      .step-image {
         flex: 1;
         position: relative;
         border-radius: 20px;
@@ -248,30 +219,77 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      .mission-image img {
+      .step-image img {
         width: 100%;
         display: block;
         transition: transform 0.5s ease;
       }
 
-      .mission-image:hover img {
+      .step-image:hover img {
         transform: scale(1.03);
       }
 
-      /* Values */
-      .values {
+      .step-content {
+        flex: 1;
+      }
+
+      .step-number {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--gradient);
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
+        line-height: 60px;
+        margin-bottom: 25px;
+      }
+
+      .step-content h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .step-content p {
+        color: var(--gray);
+        margin-bottom: 25px;
+        line-height: 1.8;
+      }
+
+      .feature-list {
+        list-style: none;
+        margin-top: 25px;
+      }
+
+      .feature-list li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .feature-list li i {
+        color: var(--accent);
+        font-size: 1.2rem;
+        margin-top: 5px;
+      }
+
+      /* Features Section */
+      .features {
         padding: 100px 0;
-        background: var(--darker);
+        background: var(--dark);
         position: relative;
       }
 
-      .values-grid {
+      .features-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
       }
 
-      .value-card {
+      .feature-card {
         background: rgba(30, 41, 59, 0.6);
         border-radius: 20px;
         padding: 40px 30px;
@@ -281,13 +299,13 @@
         backdrop-filter: blur(10px);
       }
 
-      .value-card:hover {
+      .feature-card:hover {
         transform: translateY(-10px);
         background: rgba(67, 97, 238, 0.1);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
 
-      .value-icon {
+      .feature-icon {
         width: 80px;
         height: 80px;
         display: flex;
@@ -300,224 +318,161 @@
         color: white;
       }
 
-      .value-card h3 {
+      .feature-card h3 {
         font-size: 1.6rem;
         margin-bottom: 15px;
       }
 
-      .value-card p {
+      .feature-card p {
         color: var(--gray);
       }
 
-      /* Team */
-      .team {
+      /* Video Demo */
+      .video-demo {
         padding: 100px 0;
-        background: var(--dark);
+        text-align: center;
+      }
+
+      .video-container {
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         position: relative;
       }
 
-      .team-grid {
+      .video-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient);
+        opacity: 0.3;
+        z-index: 1;
+      }
+
+      .video-container video {
+        width: 100%;
+        display: block;
+      }
+
+      .video-placeholder {
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(45deg, #2c3e50, #4a5568);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .play-button {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--gradient);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 2;
+        transition: all 0.3s;
+      }
+
+      .play-button:hover {
+        transform: scale(1.1);
+      }
+
+      /* Testimonials */
+      .testimonials {
+        padding: 100px 0;
+        background: var(--darker);
+        position: relative;
+      }
+
+      .testimonials-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
       }
 
-      .team-member {
+      .testimonial-card {
         background: rgba(30, 41, 59, 0.6);
         border-radius: 20px;
-        overflow: hidden;
+        padding: 40px 30px;
         transition: all 0.3s ease;
         border: 1px solid rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
       }
 
-      .team-member:hover {
+      .testimonial-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        background: rgba(67, 97, 238, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
 
-      .member-image {
-        height: 300px;
-        overflow: hidden;
+      .testimonial-content {
+        margin-bottom: 20px;
+        font-style: italic;
+        color: var(--gray);
       }
 
-      .member-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .team-member:hover .member-image img {
-        transform: scale(1.1);
-      }
-
-      .member-info {
-        padding: 25px;
-        text-align: center;
-      }
-
-      .member-info h3 {
-        font-size: 1.5rem;
-        margin-bottom: 5px;
-      }
-
-      .member-info p {
-        color: var(--accent);
-        margin-bottom: 15px;
-      }
-
-      .member-social {
+      .testimonial-author {
         display: flex;
-        justify-content: center;
+        align-items: center;
         gap: 15px;
       }
 
-      .member-social a {
-        width: 36px;
-        height: 36px;
+      .author-avatar {
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--gradient);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--light);
-        transition: all 0.3s;
+        color: white;
+        font-weight: 700;
       }
 
-      .member-social a:hover {
-        background: var(--accent);
-        transform: translateY(-3px);
+      .author-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
       }
 
-      /* Stats */
-      .stats {
-        padding: 80px 0;
-        background: var(--darker);
-        position: relative;
+      .author-info p {
+        color: var(--accent);
+        font-size: 0.9rem;
       }
 
-      .stats-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-      }
-
-      .stat-card {
-        text-align: center;
-        padding: 30px;
-      }
-
-      .stat-number {
-        font-size: 3.5rem;
-        font-weight: 800;
-        background: var(--gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 15px;
-      }
-
-      .stat-label {
-        font-size: 1.1rem;
-        color: var(--gray);
-      }
-
-      /* Timeline */
-      .timeline {
+      /* CTA Section */
+      .cta {
         padding: 100px 0;
-        background: var(--dark);
+        text-align: center;
         position: relative;
       }
 
-      .timeline-container {
-        position: relative;
-        max-width: 800px;
+      .cta-content {
+        max-width: 700px;
         margin: 0 auto;
       }
 
-      .timeline-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: var(--accent);
-        left: 50%;
-        transform: translateX(-50%);
+      .cta h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 20px;
       }
 
-      .timeline-item {
-        padding: 20px 40px;
-        position: relative;
-        width: 50%;
-        box-sizing: border-box;
-      }
-
-      .timeline-item:nth-child(odd) {
-        left: 0;
-      }
-
-      .timeline-item:nth-child(even) {
-        left: 50%;
-      }
-
-      .timeline-content {
-        background: rgba(30, 41, 59, 0.6);
-        border-radius: 15px;
-        padding: 30px;
-        position: relative;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-      }
-
-      .timeline-content::after {
-        content: "";
-        position: absolute;
-        top: 30px;
-        width: 20px;
-        height: 20px;
-        background: var(--accent);
-        border-radius: 50%;
-      }
-
-      .timeline-item:nth-child(odd) .timeline-content::after {
-        right: -50px;
-      }
-
-      .timeline-item:nth-child(even) .timeline-content::after {
-        left: -50px;
-      }
-
-      .timeline-year {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: var(--accent);
-      }
-
-      .timeline-title {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-      }
-
-      /* CTA */
-      .about-cta {
-        padding: 100px 0;
-        text-align: center;
-        background: var(--darker);
-        position: relative;
-      }
-
-      .about-cta h2 {
-        font-size: 2.8rem;
-        margin-bottom: 25px;
-      }
-
-      .about-cta p {
+      .cta p {
         font-size: 1.2rem;
         color: var(--gray);
-        max-width: 700px;
-        margin: 0 auto 40px;
+        margin-bottom: 40px;
       }
 
       /* Footer */
@@ -600,29 +555,31 @@
         font-size: 0.9rem;
       }
 
-      /* Responsive */
+      /* Responsive Design */
       @media (max-width: 992px) {
-        .mission-content {
+        .step-container {
           flex-direction: column;
         }
 
-        .timeline-container::before {
-          left: 30px;
+        .step-container:nth-child(even) {
+          flex-direction: column;
         }
 
-        .timeline-item {
+        .step-image,
+        .step-content {
           width: 100%;
-          padding-left: 70px;
-          padding-right: 25px;
         }
 
-        .timeline-item:nth-child(even) {
-          left: 0;
+        .how-it-works-hero h1 {
+          font-size: 3rem;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content::after,
-        .timeline-item:nth-child(even) .timeline-content::after {
-          left: 20px;
+        .section-header h2 {
+          font-size: 2.3rem;
+        }
+
+        .cta h2 {
+          font-size: 2.5rem;
         }
       }
 
@@ -631,21 +588,21 @@
           display: none;
         }
 
-        .about-hero h1 {
-          font-size: 2.8rem;
+        .how-it-works-hero h1 {
+          font-size: 2.5rem;
         }
 
         .section-header h2 {
-          font-size: 2.3rem;
+          font-size: 2rem;
         }
       }
 
       @media (max-width: 576px) {
-        .about-hero h1 {
-          font-size: 2.3rem;
+        .how-it-works-hero h1 {
+          font-size: 2.2rem;
         }
 
-        .section-header h2 {
+        .cta h2 {
           font-size: 2rem;
         }
       }
@@ -674,167 +631,172 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="about-hero">
+    <section class="how-it-works-hero">
       <div class="container">
-        <h1>We're on a mission to <span>simplify productivity</span></h1>
+        <h1>How <span>Jessy's Task Manager</span> Works</h1>
         <p>
-          Jessy's Task Manager was born from a simple idea: task management
-          should empower you, not overwhelm you. Since 2020, we've been helping
-          individuals and teams achieve more with less stress.
+          Discover the simple yet powerful workflow that helps thousands of
+          people and teams achieve more every day. Get started in minutes and
+          transform your productivity.
         </p>
       </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="mission">
+    <!-- Steps Section -->
+    <section class="steps">
       <div class="container">
         <div class="section-header">
-          <h2>Our Mission</h2>
-          <p>Creating tools that help you focus on what truly matters</p>
+          <h2>Simple Steps to Productivity</h2>
+          <p>
+            Follow these steps to master Jessy's Task Manager and take control
+            of your tasks
+          </p>
         </div>
-        <div class="mission-content">
-          <div class="mission-text">
-            <h3>Redefining productivity for the modern world</h3>
-            <p>
-              In today's fast-paced world, staying organized can feel like a
-              full-time job. We created Jessy's Task Manager to give you back
-              that precious time and mental energy.
-            </p>
-            <p>
-              Our mission is to transform how people approach their work and
-              personal tasks by creating an intuitive, flexible platform that
-              adapts to your unique workflow - not the other way around.
-            </p>
-            <p>
-              We believe productivity tools should be empowering, not
-              overwhelming. That's why we've designed Jessy's Task Manager to be
-              as simple or as powerful as you need it to be.
-            </p>
-          </div>
-          <div class="mission-image">
+
+        <div class="step-container">
+          <div class="step-image">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Jessy's Task Manager in action"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80"
+              alt="Create Tasks"
             />
           </div>
+          <div class="step-content">
+            <span class="step-number">1</span>
+            <h3>Create & Organize Tasks</h3>
+            <p>
+              Quickly add tasks with just a few keystrokes. Organize them into
+              projects, add due dates, and assign priorities to focus on what
+              matters most.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Add tasks in seconds with our intuitive interface</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Categorize tasks into projects or custom labels</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Set due dates and reminders for important deadlines</div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Values Section -->
-    <section class="values">
-      <div class="container">
-        <div class="section-header">
-          <h2>Our Core Values</h2>
-          <p>The principles that guide everything we do</p>
-        </div>
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fas fa-user-friends"></i>
-            </div>
-            <h3>User-Centric</h3>
-            <p>
-              We design for real people, not just features. Every decision
-              starts with our users' needs.
-            </p>
+        <div class="step-container">
+          <div class="step-image">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Prioritize Tasks"
+            />
           </div>
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3>Innovative</h3>
+          <div class="step-content">
+            <span class="step-number">2</span>
+            <h3>Prioritize & Plan</h3>
             <p>
-              We challenge conventions and embrace new ideas that solve real
-              problems in fresh ways.
+              Use our visual priority system to identify urgent tasks. Plan your
+              day with drag-and-drop scheduling and time blocking features.
             </p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fas fa-heart"></i>
-            </div>
-            <h3>Passionate</h3>
-            <p>
-              We genuinely care about helping people achieve their goals and
-              live more fulfilling lives.
-            </p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fas fa-lock"></i>
-            </div>
-            <h3>Transparent</h3>
-            <p>
-              We believe in open communication and building trust through
-              honesty and integrity.
-            </p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fas fa-sync-alt"></i>
-            </div>
-            <h3>Adaptable</h3>
-            <p>
-              We evolve with our users' needs, continuously improving our
-              platform based on feedback.
-            </p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fas fa-globe"></i>
-            </div>
-            <h3>Impact-Driven</h3>
-            <p>
-              We measure success by the positive difference we make in our
-              users' lives and work.
-            </p>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Color-coded priorities for quick visual scanning</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Drag-and-drop interface for easy rescheduling</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Time blocking to allocate focused work periods</div>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-      <div class="container">
-        <div class="stats-container">
-          <div class="stat-card">
-            <div class="stat-number">50K+</div>
-            <div class="stat-label">Active Users</div>
+        <div class="step-container">
+          <div class="step-image">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Focus and Work"
+            />
           </div>
-          <div class="stat-card">
-            <div class="stat-number">1.2M</div>
-            <div class="stat-label">Tasks Completed</div>
+          <div class="step-content">
+            <span class="step-number">3</span>
+            <h3>Focus & Execute</h3>
+            <p>
+              Minimize distractions with our focus mode. Track your progress as
+              you complete tasks and build momentum throughout your day.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Focus mode hides non-essential UI elements</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Progress tracking with visual indicators</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Pomodoro timer integration for work intervals</div>
+              </li>
+            </ul>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Customer Satisfaction</div>
+        </div>
+
+        <div class="step-container">
+          <div class="step-image">
+            <img
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Review and Improve"
+            />
           </div>
-          <div class="stat-card">
-            <div class="stat-number">15</div>
-            <div class="stat-label">Team Members</div>
+          <div class="step-content">
+            <span class="step-number">4</span>
+            <h3>Review & Improve</h3>
+            <p>
+              Analyze your productivity with insightful reports. Identify
+              patterns, optimize your workflow, and celebrate your achievements.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Daily and weekly productivity reports</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Completion rate tracking and statistics</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Time spent analysis per project or category</div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="about-cta">
+    <section class="cta">
       <div class="container">
-        <h2>Ready to transform your productivity?</h2>
-        <p>
-          Join thousands of professionals who have already streamlined their
-          workflow with Jessy's Task Manager
-        </p>
-        <a href="./task.html">
-
+        <div class="cta-content">
+          <h2>Ready to Transform Your Productivity?</h2>
+          <p>
+            Join thousands of professionals who are already using Jessy's Task
+            Manager to accomplish more every day.
+          </p>
+          <a href="./task.html">
             <button class="cta-button">Try Now</button>
-        </a>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <!-- Footer -->
-    <footer>
+      <footer>
       <div class="container">
         <div class="footer-content">
           <div class="footer-column">
@@ -870,6 +832,21 @@
         });
       });
 
+      // Video play button
+      const playButton = document.querySelector(".play-button");
+      if (playButton) {
+        playButton.addEventListener("click", function () {
+          const videoPlaceholder = document.querySelector(".video-placeholder");
+          if (videoPlaceholder) {
+            videoPlaceholder.innerHTML = `
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+                    `;
+          }
+        });
+      }
+
       // Animation on scroll
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -880,7 +857,7 @@
       });
 
       document
-        .querySelectorAll(".value-card, .team-member, .timeline-content")
+        .querySelectorAll(".step-container, .feature-card, .testimonial-card")
         .forEach((element) => {
           element.style.opacity = "0";
           element.style.transform = "translateY(20px)";
@@ -890,7 +867,7 @@
 
       window.addEventListener("scroll", () => {
         document
-          .querySelectorAll(".value-card, .team-member, .timeline-content")
+          .querySelectorAll(".step-container, .feature-card, .testimonial-card")
           .forEach((element) => {
             const elementTop = element.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
